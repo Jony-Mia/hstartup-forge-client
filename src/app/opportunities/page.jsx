@@ -36,11 +36,9 @@ const page = async () => {
                     <p className="text-default-500 text-center text-sm mt-1">Manage and monitor active roles, skills criteria, and application timelines.</p>
                 </div>
             </div>
-
-
-            {/* <Card className="border-none bg-background shadow-medium rounded-xl overflow-hidden"> */}
+            
             <Tabler data={data} />
-            {/* </Card> */}
+            
         </div>
     );
 };
