@@ -25,7 +25,8 @@ export default function LoginPage() {
     let {data, error} = await authClient.signIn.email({
       email: formData.email,
       password: formData.password,
-      rememberMe: formData.rememberMe
+      rememberMe: formData.rememberMe,
+      callbackURL: "/"
     })
     console.log(data, error)
     // Handle login submission logic here

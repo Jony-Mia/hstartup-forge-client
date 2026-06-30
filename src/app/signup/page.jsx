@@ -54,6 +54,7 @@ export default function SignUpPage() {
       name: formData.name,
       email: formData.email,
       password: formData.password,
+      role: formData.userType,
       callbackURL: "/"
     })
     console.log(data, error);
@@ -178,6 +179,14 @@ export default function SignUpPage() {
                       <Radio.Indicator />
                     </Radio.Control>
                     Collaborator
+                  </Radio.Content>
+                </Radio>
+                <Radio value="admin"  >
+                  <Radio.Content>
+                    <Radio.Control>
+                      <Radio.Indicator />
+                    </Radio.Control>
+                    admin
                   </Radio.Content>
                 </Radio>
               </RadioGroup>

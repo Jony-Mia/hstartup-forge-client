@@ -1,17 +1,24 @@
 "use client";
 
-import { useSession } from "@/lib/auth-client";
+import { authClient, useSession } from "@/lib/auth-client";
 import { Bars } from "@gravity-ui/icons";
 import { Button, Dropdown } from "@heroui/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Avatar from "@/assets/avatar_male.png";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function NavbarSection() {
+  let [userData, setUserData]= useState(null);
   let path = usePathname();
   let { data } = useSession()
   let user = data?.user;
+  
+  useEffect(()=>{    
+    setUserData(user)
+  },[user])
+  let logout = async()=> await authClient.signOut();
   console.log(user)
 
   return (
@@ -71,7 +78,7 @@ export default function NavbarSection() {
               Browse Opportunities
             </Link>
             {
-              user && (
+              userData && (
                 <Link
                   href="/add"
                   className={`text-xs font-semibold ${path === "/add" ? "text-indigo-600" : ""} transition hover:text-indigo-700`}
@@ -91,20 +98,34 @@ export default function NavbarSection() {
 
         {/* Right Side: Authentication Buttons */}
         {
-          user ?
-            <div className="flex gap-3 items-center">
-              <div>
-                {user?.image ?
-                  <img src={user.image} className="rounded-full " alt="user profile image" width="40" height="40" /> :
-                  <Image src={Avatar} alt="user profile avatar" width="50" />
+          userData ?
+            <Dropdown>
+              <Dropdown.Trigger>
+                <div className="flex gap-3 items-center">
+                  <div>
+                    {userData?.image ?
+                      <img src={userData.image} className="rounded-full " alt="user profile image" width="40" height="40" /> :
+                      <Image src={Avatar} alt="user profile avatar" width="50" />
 
-                }
-              </div>
-              <div className="flex flex-col">
-                <span>{user.name}</span>
-                <small>{user.email}</small>
-              </div>
-            </div>
+                    }
+                  </div>
+                  <div className="flex flex-col">
+                    <span>{userData.name}</span>
+                    <small>{userData.email}</small>
+                  </div>
+                </div>
+              </Dropdown.Trigger>
+              <Dropdown.Popover>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={logout} >
+                      Log out
+                  </Dropdown.Item>
+                  <Dropdown.Item href="/dashboard">
+                    Dashboard
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown.Popover>
+            </Dropdown>
 
             :
             <div className="flex items-center gap-4">
