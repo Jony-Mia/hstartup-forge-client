@@ -10,7 +10,7 @@ const Tabler = ({data}) => {
                 aria-label="Opportunities management table"
             >
                 <Table.Content>
-                    <Table.Header>
+                    <Table.Header >
                         <Table.Column className="bg-default-100 text-default-700 font-semibold text-sm">ROLE</Table.Column>
                         <Table.Column className="bg-default-100 text-default-700 font-semibold text-sm">SKILLS REQUIRED</Table.Column>
                         <Table.Column className="bg-default-100 text-default-700 font-semibold text-sm">WORK TYPE</Table.Column>

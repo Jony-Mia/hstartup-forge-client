@@ -2,7 +2,7 @@ import axios from "axios";
 import { redirect } from "next/navigation";
 
 const API = axios.create({
-    baseURL:"http://localhost:4400"
+    baseURL:"http://localhost:4400" || "https://startup-forge-backend-iota.vercel.app" 
 })
 export const GetRoute = async ()=>{
     let getOpportunities = await API.get("/opportunities");

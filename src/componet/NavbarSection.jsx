@@ -70,12 +70,16 @@ export default function NavbarSection() {
             >
               Browse Opportunities
             </Link>
-            <Link
-              href="/add"
-              className={`text-xs font-semibold ${path === "/add" ? "text-indigo-600" : ""} transition hover:text-indigo-700`}
-            >
-              Add Opportunities
-            </Link>
+            {
+              user && (
+                <Link
+                  href="/add"
+                  className={`text-xs font-semibold ${path === "/add" ? "text-indigo-600" : ""} transition hover:text-indigo-700`}
+                >
+                  Add Opportunities
+                </Link>
+              )
+            }
             <Link
               href="/privacy"
               className={`text-xs font-semibold ${path === "/privacy" ? "text-indigo-600" : ""} transition hover:text-indigo-700`}
@@ -91,9 +95,9 @@ export default function NavbarSection() {
             <div className="flex gap-3 items-center">
               <div>
                 {user?.image ?
-                <img src={user.image} className="rounded-full " alt="user profile image" width="40" height="40" /> :
-                <Image src={Avatar} alt="user profile avatar" width="50" /> 
-                
+                  <img src={user.image} className="rounded-full " alt="user profile image" width="40" height="40" /> :
+                  <Image src={Avatar} alt="user profile avatar" width="50" />
+
                 }
               </div>
               <div className="flex flex-col">
