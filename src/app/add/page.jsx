@@ -68,6 +68,7 @@ export default function WithForm() {
         //         let fetchImage = await axios.post(`https://api.imgbb.com/1/upload?key=3400c5b9c87c9fadca80817ae1c398a6`, formData)
         //         let imageData = await fetchImage.data;
         //         dataField.image = imageData.data.uri;
+        
         await PostRoute(dataField);
         //     } catch (error) {
         //         console.log(error);

@@ -75,7 +75,7 @@ export function FooterSection() {
   // );
 
   return (
-    <footer className="bg-[#e6ecf8] text-[#2d3748] px-6 py-12 md:px-16 lg:px-24 font-sans rounded-b-2xl">
+    <footer className="bg-[#e6ecf8] text-[#2d3748] mt-5   px-6 py-12 md:px-16 lg:px-24 font-sans rounded-b-2xl">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 pb-8">
         
         {/* Brand Information Column */}

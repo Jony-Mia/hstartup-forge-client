@@ -27,7 +27,7 @@ export function Navigation() {
         // { icon: Persons, label: "Collaborator" },
         // { icon: SquarePlus, label: "Create Startup" },
         { icon: CopyPlus, label: "Create Opportunities" , href:"/dashboard/create"},
-        { icon: PersonPencil, label: "Manage Startup", href:"/manage-startup" },
+        { icon: PersonPencil, label: "Manage Startup", href:"/manageStartup" },
         // { icon: Envelope, label: "Messages" },
         { icon: FileLetterW, label: "Applications", href:"/applications" },
         // { icon: Person, label: "Profile" },

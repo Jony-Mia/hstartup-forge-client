@@ -7,7 +7,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
+        hostname: 'i.ibb.co',
         port: '',
         pathname: '/**',
         search: '',
