@@ -12,6 +12,13 @@ const nextConfig = {
         pathname: '/**',
         search: '',
       },
+      {
+        protocol: 'https',
+        hostname: 'localhost:3000',
+        port: '',
+        pathname: '/**',
+        search: '',
+      },
     ],
   },
 };

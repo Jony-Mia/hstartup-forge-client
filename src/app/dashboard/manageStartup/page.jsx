@@ -2,6 +2,8 @@ import { GetStartup, EditStartup } from "@/api/actionRoutes";
 import { Button, Card } from "@heroui/react";
 import Image from "next/image";
 import EditButton from "./EditButton";
+import Link from "next/link";
+import { PencilToSquare } from "@gravity-ui/icons";
 
 const page = async () => {
     let startupDataList = await GetStartup()
@@ -17,19 +19,22 @@ const page = async () => {
                                 <Card.Header>
                                     <div className="flex">
                                         <div>
-                                            <Image width={80} height={80} alt={startup.name} src={startup.image}/>
+                                            <Image width={80} height={80} alt={startup.name} src={startup.image} />
                                         </div>
                                         <div>
                                             <p>{startup.name}</p>
                                             <small>{startup.industry}</small>
                                         </div>
-                                    </div> 
+                                    </div>
                                 </Card.Header>
                                 <Card.Content>
                                     <p>{startup.description}</p>
                                 </Card.Content>
                                 <Card.Footer>
-                                    <EditButton >View</EditButton>
+                                    <Link href={`/dashboard/my-startup/${startup._id}`} >
+                                        <Button> Edit <PencilToSquare />
+                                        </Button>
+                                    </Link>
                                 </Card.Footer>
                             </Card>
                         )

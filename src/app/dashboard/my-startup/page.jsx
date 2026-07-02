@@ -169,7 +169,7 @@ const Page = () => {
                         />
                     </div>
                     <br />
-                    <Button type="submit">Submit</Button>
+                    
                     <Modal>
                         <Button variant="primary">Create Startup</Button>
                         <Modal.Backdrop>
@@ -184,16 +184,17 @@ const Page = () => {
                                     </Modal.Header>
                                     <Modal.Body>
                                         <p>
-                                            Are you sure to create a starup?
+                                            Are you sure to update your starup?
                                         </p>
                                     </Modal.Body>
                                     <Modal.Footer>
                                         <Button className="w-full" variant="danger" slot="close">
                                             Cancel
                                         </Button>
-                                        <Button className="w-full" >
+                                        <Button type="submit" className="w-full" >
                                             Confirm
                                         </Button>
+                                        
                                     </Modal.Footer>
                                 </Modal.Dialog>
                             </Modal.Container>

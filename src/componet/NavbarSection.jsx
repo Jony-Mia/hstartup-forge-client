@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import Avatar from "@/assets/avatar_male.png";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import Logo from "@/assets/FullLogo_Transparent.png"
 export default function NavbarSection() {
   let [userData, setUserData] = useState(null);
   let path = usePathname();
@@ -61,7 +61,7 @@ export default function NavbarSection() {
           </div>
 
           <Link href="/" className="text-2xl font-bold tracking-tight text-slate-950">
-            StartupForge
+            <Image width="80" height="80" src={Logo} alt="startup forge"/>
           </Link>
 
           <nav className="hidden md:hidden items-center gap-6 lg:flex">
